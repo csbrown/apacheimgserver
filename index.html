@@ -1,0 +1,27 @@
+<html>
+<head>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+    <input id="typing" type="text" onkeypress="maybefetch(event)">
+    <script src="js/apache_img_fetcher.js"></script>
+    <script src="js/imager.js"></script>
+    <script src="js/keymapper.js"></script>
+    <script>
+        var body = document.querySelector("body");
+
+        function maybefetch(event) {
+            if (event.keyCode == 13) {
+                get_imgs(document.getElementById("typing").value, (urls) => load_imgs_from_src(urls, body));
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>
